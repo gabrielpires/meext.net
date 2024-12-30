@@ -53,13 +53,15 @@ destroy() {
     qm destroy $VM_ID
 }
 
-# Main logic for invoking functions
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 {create|config|start|stop|destroy}"
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 <TARGET_VM> {create|config|start|stop|destroy}"
     exit 1
 fi
 
-case "$1" in
+TARGET_VM=$1
+ACTION=$2
+
+case "$ACTION" in
     create)
         create
         ;;
@@ -76,8 +78,8 @@ case "$1" in
         destroy
         ;;
     *)
-        echo "Invalid option: $1"
-        echo "Usage: $0 {create|config|start|stop|destroy}"
+        echo "Invalid option: $ACTION"
+        echo "Usage: $0 <TARGET_VM> {create|config|start|stop|destroy}"
         exit 1
         ;;
 esac

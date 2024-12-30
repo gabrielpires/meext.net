@@ -3,7 +3,7 @@
 # Configuration
 VM_ID=100
 VM_NAME="pfsense"
-ISO_PATH="local:iso/pfSense-CE-2.7.2-RELEASE-amd64.iso"
+ISO_PATH="iso/pfSense-CE-2.7.2-RELEASE-amd64.iso"
 DISK_SIZE="20"
 MEMORY="2048"
 CORES="1"
@@ -25,8 +25,8 @@ create() {
         --net1 virtio,bridge=$BRIDGE_NET1 \
         --net2 virtio,bridge=$BRIDGE_NET2 \
         --scsi0 local-lvm:$DISK_SIZE \
-        --ide2 $ISO_PATH \
-        --boot order=scsi0;ide2
+        --ide2 local:$ISO_PATH \
+        --boot order=scsi0,ide2
 }
 
 # Function: Configure VM

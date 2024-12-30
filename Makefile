@@ -1,13 +1,13 @@
 SHELL := /bin/bash
 VM_SCRIPT_DIR := vms
-VM_SCRIPT := $(VM_SCRIPT_DIR)/$(TARGET_VM).sh
+VM_SCRIPT := $(VM_SCRIPT_DIR)/$(VM).sh
 
 .PHONY: check_vm create config start stop destroy
 
-# Function to check TARGET_VM and confirm execution
+# Function to check VM and confirm execution
 check_vm:
-ifndef TARGET_VM
-	$(error TARGET_VM is not set. Please specify it like: make <action> TARGET_VM=<value>)
+ifndef VM
+	$(error VM is not set. Please specify it like: make <action> VM=<value>)
 endif
 	@if [ ! -f $(VM_SCRIPT) ]; then \
 	    echo "Error: Script $(VM_SCRIPT) does not exist."; \
@@ -17,16 +17,16 @@ endif
 
 # Targets
 create: check_vm
-	$(VM_SCRIPT) $(TARGET_VM) create
+	$(VM_SCRIPT) $(VM) create
 
-config: check_vm
-	$(VM_SCRIPT) $(TARGET_VM) config
+config: 
+	$(VM_SCRIPT) $(VM) config
 
-start: check_vm
-	$(VM_SCRIPT) $(TARGET_VM) start
+start:
+	$(VM_SCRIPT) $(VM) start
 
 stop: check_vm
-	$(VM_SCRIPT) $(TARGET_VM) stop
+	$(VM_SCRIPT) $(VM) stop
 
 destroy: check_vm
-	$(VM_SCRIPT) $(TARGET_VM) destroy
+	$(VM_SCRIPT) $(VM) destroy

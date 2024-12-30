@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-VM_ID=100
+export VM_ID=100
 VM_NAME="pfsense"
 ISO_PATH="iso/pfSense-CE-2.7.2-RELEASE-amd64.iso"
 DISK_SIZE="20"
@@ -29,6 +29,7 @@ create() {
         --boot order='scsi0;ide2'
 }
 
+
 # Function: Configure VM
 config() {
     echo "Configuring VM with ID $VM_ID"
@@ -54,11 +55,11 @@ destroy() {
 }
 
 if [ $# -lt 2 ]; then
-    echo "Usage: $0 <TARGET_VM> {create|config|start|stop|destroy}"
+    echo "Usage: $0 <VM> {create|config|start|stop|destroy}"
     exit 1
 fi
 
-TARGET_VM=$1
+VM=$1
 ACTION=$2
 
 case "$ACTION" in
@@ -79,7 +80,7 @@ case "$ACTION" in
         ;;
     *)
         echo "Invalid option: $ACTION"
-        echo "Usage: $0 <TARGET_VM> {create|config|start|stop|destroy}"
+        echo "Usage: $0 <VM> {create|config|start|stop|destroy}"
         exit 1
         ;;
 esac

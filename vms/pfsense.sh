@@ -3,7 +3,7 @@
 # Configuration
 VM_ID=100
 VM_NAME="pfsense"
-ISO_PATH="/var/lib/vz/template/iso/pfSense-CE-2.7.2-RELEASE-amd64.iso"
+ISO_PATH="iso/pfSense-CE-2.7.2-RELEASE-amd64.iso"
 DISK_SIZE="20"
 MEMORY="2048"
 CORES="1"

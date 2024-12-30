@@ -25,7 +25,7 @@ create() {
         --net1 virtio,bridge=$BRIDGE_NET1 \
         --net2 virtio,bridge=$BRIDGE_NET2 \
         --scsi0 local-lvm:$DISK_SIZE \
-        --ide2 local:$ISO_PATH \
+        --cdroom local:$ISO_PATH \
         --boot order=scsi0;ide2
 }
 

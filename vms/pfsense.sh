@@ -26,7 +26,7 @@ create() {
         --net2 virtio,bridge=$BRIDGE_NET2 \
         --scsi0 local-lvm:$DISK_SIZE \
         --cdrom local:$ISO_PATH \
-        --boot order=scsi0,ide2
+        --boot order=scsi0;ide2
 }
 
 # Function: Configure VM

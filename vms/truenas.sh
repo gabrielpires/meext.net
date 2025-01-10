@@ -9,6 +9,8 @@ MEMORY="16384"
 CORES="4"
 SOCKETS="1"
 BRIDGE_NET0="vmbr0"
+DISK_ID1="/dev/disk/by-id/ata-ST4000NE001-2MA101_WS258WS3"
+DISK_ID2="/dev/disk/by-id/ata-ST4000NE001-2MA101_WS257VN5"
 
 
 # Function: Create VM
@@ -22,8 +24,8 @@ create() {
         --scsihw virtio-scsi-pci \
         --net0 virtio,bridge=$BRIDGE_NET0 \
         --scsi0 local-lvm:$DISK_SIZE \
-        --scsi1 /dev/disk/by-id/ata-ST4000NE001-2MA101_WS258WS3,cache=writeback \
-        --scsi2 /dev/disk/by-id/ata-ST4000NE001-2MA101_WS257VN5,cache=writeback \
+        --scsi1 $DISK_ID1,cache=writeback \
+        --scsi2 $DISK_ID2,cache=writeback \
         --ide2 local:$ISO_PATH,media=cdrom \
         --boot order='scsi0;ide2' \
         --autostart 1

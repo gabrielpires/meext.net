@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # Configuration
-export VM_ID=101
-VM_NAME="adguard"
-ISO_PATH="iso/debian-12.8.0-amd64-netinst.iso"
-DISK_SIZE="20"
-MEMORY="2048"
-CORES="1"
+export VM_ID=100
+VM_NAME="truenas"
+ISO_PATH="iso/TrueNAS-13.3-U1.iso"
+DISK_SIZE="32"
+MEMORY="16384"
+CORES="4"
 SOCKETS="1"
-BRIDGE_NET0="vmbr1"
+BRIDGE_NET0="vmbr0"
+
 
 # Function: Create VM
 create() {
@@ -22,7 +23,8 @@ create() {
         --net0 virtio,bridge=$BRIDGE_NET0 \
         --scsi0 local-lvm:$DISK_SIZE \
         --ide2 local:$ISO_PATH,media=cdrom \
-        --boot order='scsi0;ide2'
+        --boot order='scsi0;ide2' \
+        --autostart 1
 }
 
 

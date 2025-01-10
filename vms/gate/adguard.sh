@@ -1,16 +1,14 @@
 #!/bin/bash
 
 # Configuration
-export VM_ID=100
-VM_NAME="pfsense"
-ISO_PATH="iso/pfSense-CE-2.7.2-RELEASE-amd64.iso"
+export VM_ID=101
+VM_NAME="adguard"
+ISO_PATH="iso/debian-12.8.0-amd64-netinst.iso"
 DISK_SIZE="20"
 MEMORY="2048"
 CORES="1"
 SOCKETS="1"
-BRIDGE_NET0="vmbr0"
-BRIDGE_NET1="vmbr1"
-BRIDGE_NET2="vmbr2"
+BRIDGE_NET0="vmbr1"
 
 # Function: Create VM
 create() {
@@ -22,11 +20,10 @@ create() {
         --memory $MEMORY \
         --scsihw virtio-scsi-pci \
         --net0 virtio,bridge=$BRIDGE_NET0 \
-        --net1 virtio,bridge=$BRIDGE_NET1 \
-        --net2 virtio,bridge=$BRIDGE_NET2 \
         --scsi0 local-lvm:$DISK_SIZE \
         --ide2 local:$ISO_PATH,media=cdrom \
-        --boot order='scsi0;ide2'
+        --boot order='scsi0;ide2'  \
+        --autostart 1
 }
 
 
@@ -53,6 +50,8 @@ destroy() {
     echo "Destroying VM with ID $VM_ID"
     qm destroy $VM_ID
 }
+
+
 
 if [ $# -lt 2 ]; then
     echo "Usage: $0 <VM> {create|config|start|stop|destroy}"

@@ -28,8 +28,6 @@ create() {
         --scsihw virtio-scsi-pci \
         --net0 virtio,bridge=$BRIDGE_NET0 \
         --scsi0 local-lvm:$DISK_SIZE \
-        --scsi1 $DISK_ID1,cache=writeback \
-        --scsi2 $DISK_ID2,cache=writeback \
         --ide2 local:$ISO_PATH,media=cdrom \
         --boot order='scsi0;ide2' \
         --autostart 1

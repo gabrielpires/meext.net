@@ -24,7 +24,7 @@ create() {
         --cores $CORES \
         --sockets $SOCKETS \
         --memory $MEMORY \
-        --gpu0 $GPU,pcie=on,x-vga=on \
+        --hostpci0 $GPU,pcie=on,x-vga=on \
         --scsihw virtio-scsi-pci \
         --net0 virtio,bridge=$BRIDGE_NET0 \
         --scsi0 local-lvm:$DISK_SIZE \

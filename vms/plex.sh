@@ -18,20 +18,20 @@ BRIDGE_NET0="vmbr0"
 create() {
     echo "Creating VM with ID $VM_ID"
     qm create $VM_ID \
-        --machine $MACHINE_TYPE \
-        --bios $BIOS \
         --name "$VM_NAME" \
         --cores $CORES \
         --sockets $SOCKETS \
         --memory $MEMORY \
-        --efidisk0 local-lvm:1,format=raw,efitype=4m,pre-enrolled-keys=1 \
-        --hostpci0 $GPU,pcie=on,x-vga=on \
         --scsihw virtio-scsi-pci \
         --net0 virtio,bridge=$BRIDGE_NET0 \
         --scsi0 local-lvm:$DISK_SIZE \
         --ide2 local:$ISO_PATH,media=cdrom \
         --boot order='scsi0;ide2' \
         --autostart 1
+        # --machine $MACHINE_TYPE \
+        # --bios $BIOS \
+        #--efidisk0 local-lvm:1,format=raw,efitype=4m,pre-enrolled-keys=1 \
+        #--hostpci0 $GPU,pcie=on,x-vga=on \
 }
 
 

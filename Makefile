@@ -19,10 +19,10 @@ endif
 create: check_vm
 	$(VM_SCRIPT) $(VM) create
 
-config: 
+config: check_vm
 	$(VM_SCRIPT) $(VM) config
 
-start:
+start: check_vm
 	$(VM_SCRIPT) $(VM) start
 
 stop: check_vm

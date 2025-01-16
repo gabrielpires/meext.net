@@ -1,0 +1,14 @@
+[Unit]
+Description=OctoPrint 3D Printer Control Service
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/octoprint/
+ExecStart=/opt/octoprint/venv/bin/octoprint serve
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

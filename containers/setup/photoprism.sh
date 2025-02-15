@@ -20,7 +20,7 @@ header_info
 echo -e "Loading..."
 APP="PhotoPrism"
 var_disk="32"
-var_cpu="2"
+var_cpu="4"
 var_ram="12288"
 var_os="debian"
 var_version="12"

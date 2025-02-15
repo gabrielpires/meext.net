@@ -65,7 +65,7 @@ mountVolume() {
     else
         echo "[INFO] Volume not mounted on '$target_path'. Attempting to mount..."
         mount -t cifs "$volume_addr" "$target_path" -o credentials="$credentials_path",vers=3.0,uid=100000,gid=1000000,file_mode=0775,dir_mode=0775
-        mount -t cifs //199.198.0.16/media/torrents/ /mnt/torrents/ -o credentials=/etc/samba/credentials/torrent.conf,vers=3.0,uid=100000,gid=1000000,file_mode=0775,dir_mode=0775
+        
         if [ $? -eq 0 ]; then
             echo "[INFO] Successfully mounted '$volume_addr' on '$target_path'."
         else
@@ -76,4 +76,4 @@ mountVolume() {
 }
 
 
-mountVolume /mnt/torrents //199.198.0.16/photos/ /etc/samba/credentials/photos.conf
+mountVolume /mnt/photos //199.198.0.16/photos/ /etc/samba/credentials/photos.conf

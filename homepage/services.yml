@@ -1,0 +1,12 @@
+- Proxmox Cluster:
+    - Nadia:
+        href: https://nadiapmox.gornati.co.uk
+        icon: proxmox
+        description: Primary Proxmox Node
+        ping: 10.168.205.99
+        widget:
+          type: proxmox
+          url: https://10.168.205.99:8006
+          username: homepage-api@pam!homepage-api
+          password: 
+          node: nadia

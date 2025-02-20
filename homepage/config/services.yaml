@@ -1,7 +1,7 @@
 - Proxmox Nodes:
   - Gate:
       href: https://gate.meext.net
-      icon: proxmox
+      icon: proxmox.png
       description: Network Node
       ping: 199.198.0.10
       widget:
@@ -16,7 +16,7 @@
       description: Heavy Lift Node
       ping: 199.198.0.15
       widget:
-        type: proxmox.png
+        type: proxmox
         url: https://core.meext.net
         username: homepage@pam!homepage-integration
         password: 50c89cbf-31b2-4b52-b9c2-d356b343a85f

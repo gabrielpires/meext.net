@@ -33,8 +33,18 @@
       icon: adguard-home.png
       description: DNS Controller
       ping: 199.198.0.2
+      widget:
+        type: adguard
+        url: https://adguard.meext.net
+        username: root
+        password: //Block13!
   - npm:
       href: https://proxy.meext.net
       icon: nginx-proxy-manager.png
       description: Proxy
       ping: 199.198.0.3
+      widget:
+        type: npm
+        url: https://proxy.meext.net
+        username: eu@gabrielpires.com.br
+        password: dAxVLsA4YdJVbhX

@@ -35,7 +35,7 @@
       ping: 199.198.0.2
       widget:
         type: adguard
-        url: https://adguard.meext.net
+        url: http://199.198.0.2
         username: root
         password: //Block13!
   - npm:

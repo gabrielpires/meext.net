@@ -30,9 +30,9 @@
       ping: 199.198.0.1
       widget:
         type: pfsense
-        url: http://pfsense.host.or.ip:port
-        username: admin # optional, or API key
-        password: pfsense # optional, or API key
+        url: http://pfsense.meext.net
+        headers: # optional, or username/password
+          X-API-Key: 96e7f028c1d8dc57387263463dc1f88e
         wan: vnet0
         version: 2 # optional, defaults to 1 for api v1
         fields: ["load", "memory", "temp", "wanStatus"] 

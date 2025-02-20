@@ -30,7 +30,7 @@
       ping: 199.198.0.1
       widget:
         type: pfsense
-        url: http://pfsense.meext.net
+        url: https://pfsense.meext.net
         headers: # optional, or username/password
           X-API-Key: 96e7f028c1d8dc57387263463dc1f88e
         wan: vnet0

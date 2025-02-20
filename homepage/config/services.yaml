@@ -1,0 +1,40 @@
+- Proxmox Nodes:
+  - Gate:
+      href: https://gate.meext.net
+      icon: proxmox
+      description: Network Node
+      ping: 199.198.0.10
+      widget:
+        type: proxmox
+        url: https://gate.meext.net
+        username: homepage@pam!homepage-integration
+        password: 11d06b74-ac23-4b88-b17d-284fc4b2a39e
+        node: core
+  - Core:
+      href: https://core.meext.net
+      icon: proxmox
+      description: Heavy Lift Node
+      ping: 199.198.0.15
+      widget:
+        type: proxmox
+        url: https://core.meext.net
+        username: homepage@pam!homepage-integration
+        password: 50c89cbf-31b2-4b52-b9c2-d356b343a85f
+        node: core
+
+- Network:
+  - pfSense:
+      href: https://pfsense.meext.net
+      icon: pfsense
+      description: Router
+      ping: 199.198.0.1
+  - adguard:
+      href: https://adguard.meext.net
+      icon: adguard
+      description: DNS Controller
+      ping: 199.198.0.2
+  - npm:
+      href: https://proxy.meext.net
+      icon: nginx-proxy-manager.
+      description: Proxy
+      ping: 199.198.0.3

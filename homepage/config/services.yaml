@@ -33,11 +33,6 @@
       icon: adguard-home.png
       description: DNS Controller
       ping: 199.198.0.2
-      widget:
-        type: adguard
-        url: http://199.198.0.2
-        username: root
-        password: //Block13!
   - npm:
       href: https://proxy.meext.net
       icon: nginx-proxy-manager.png

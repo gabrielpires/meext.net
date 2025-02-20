@@ -30,11 +30,11 @@
       ping: 199.198.0.1
   - adguard:
       href: https://adguard.meext.net
-      icon: adguard
+      icon: adguard-home.png
       description: DNS Controller
       ping: 199.198.0.2
   - npm:
       href: https://proxy.meext.net
-      icon: nginx-proxy-manager.
+      icon: nginx-proxy-manager.png
       description: Proxy
       ping: 199.198.0.3

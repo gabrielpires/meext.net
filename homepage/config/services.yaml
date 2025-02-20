@@ -12,11 +12,11 @@
         node: core
   - Core:
       href: https://core.meext.net
-      icon: proxmox
+      icon: proxmox.png
       description: Heavy Lift Node
       ping: 199.198.0.15
       widget:
-        type: proxmox
+        type: proxmox.png
         url: https://core.meext.net
         username: homepage@pam!homepage-integration
         password: 50c89cbf-31b2-4b52-b9c2-d356b343a85f
@@ -25,7 +25,7 @@
 - Network:
   - pfSense:
       href: https://pfsense.meext.net
-      icon: pfsense
+      icon: pfsense.png
       description: Router
       ping: 199.198.0.1
   - adguard:

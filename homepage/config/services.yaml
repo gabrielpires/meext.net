@@ -35,7 +35,7 @@
           X-API-Key: 96e7f028c1d8dc57387263463dc1f88e
         wan: vnet0
         version: 2 # optional, defaults to 1 for api v1
-        fields: ["load", "memory", "temp", "wanStatus"] 
+        fields: ["load", "memory", "temp"] 
   - adguard:
       href: https://adguard.meext.net
       icon: adguard-home.png
